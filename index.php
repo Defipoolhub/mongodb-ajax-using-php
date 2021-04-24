@@ -1,11 +1,21 @@
-<?php require_once('inc/config.php'); ?>
-<?php require_once('header.php'); ?>
-  
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/header.php';
+
+global $db;
+$db = new MongoDB\Client(
+    'mongodb://115.68.199.11'
+);
+
+?>
+
 <div class="container">
     <form class = "post-list">
         <input type = "hidden" value = "" />
     </form>
-    
+
     <article class="navbar-form navbar-left ml-b">
         <div class="form-group">
             <label>Per Page: </label>
@@ -19,9 +29,9 @@
         </div>
         <input type = "submit" value = "Filter" class = "btn btn-primary post_search_submit" />
     </article>
-    
+
     <br class = "clear" />
-    
+
     <div class = "wave-box-wrapper">
         <div class = "wave-box"></div>
         <table class = "table table-striped table-post-list no-margin">
@@ -37,9 +47,9 @@
             </thead>
             <tbody class = "pagination-container"></tbody>
         </table>
-        
+
         <div class = "pagination-nav"></div>
     </div>
 </div>
 
-<?php require_once('footer.php'); ?>
+<?php require_once 'footer.php';?>

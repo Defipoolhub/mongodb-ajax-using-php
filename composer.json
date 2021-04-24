@@ -1,0 +1,6 @@
+{
+    "require": {
+        "mongodb/mongodb": "^1.8",
+        "sc0vu/web3.php": "^0.1.4"
+    }
+}
